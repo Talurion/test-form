@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/submit" method="post" id="test-form">
+        <table>
+            <tr>
+                <td><label for="fullName">fullName</label></td>
+                <td><input type="text" id="fullName" name="fullName" required></td>
+            </tr>
+            <tr>
+                <td><label for="position">position</label></td>
+                <td><input type="text" id="position" name="position"></td>
+            </tr>
+            <tr>
+                <td><label for="division">division</label></td>
+                <td><input type="text" id="division" name="division"></td>
+            </tr>
+            <tr>
+                <td><label for="email">email</label></td>
+                <td><input type="email" id="email" name="email"></td>
+            </tr>
+            <tr>
+                <td><label for="agency">agency</label></td>
+                <td><input type="text" id="agency" name="agency"></td>
+            </tr>
+            <tr>
+                <td><label for="siteType">siteType</label></td>
+                <td>
+                    <select id="siteType" name="siteType">
+                        <option value="main t2.ru">main t2.ru</option>
+                        <option value="website">website</option>
+                        <option value="landing">landing</option>
+                        <option value="virtual showcase">virtual showcase</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="siteUrl">siteUrl</label></td>
+                <td><input type="text" id="siteUrl" name="siteUrl"></td>
+            </tr>
+            <tr>
+                <td><label for="stream">stream</label></td>
+                <td>
+                    <select id="stream" name="stream">
+                        <option value="web">web</option>
+                        <option value="shop">shop</option>
+                        <option value="shpd">shpd</option>
+                        <option value="flight">flight</option>
+                        <option value="b2b">b2b</option>
+                        <option value="mixx">mixx</option>
+                        <option value="skylink">skylink</option>
+                        <option value="content">content</option>
+                        <option value="info">info</option>
+                        <option value="loyalty">loyalty</option>
+                        <option value="personalization">personalization</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="product">product</label></td>
+                <td><input type="text" id="product" name="product"></td>
+            </tr>
+            <tr>
+                <td><label for="tagCategory">tagCategory</label></td>
+                <td>
+                    <select id="tagCategory" name="tagCategory">
+                        <option value="advertising">advertising</option>
+                        <option value="analytics">analytics</option>
+                        <option value="markupFix">markupFix</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="tagType">tagType</label></td>
+                <td>
+                    <select id="tagType" name="tagType">
+                        <option value="conversion">conversion</option>
+                        <option value="pageView">pageView</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="businessTask">businessTask</label></td>
+                <td><input type="text" id="businessTask" name="businessTask"></td>
+            </tr>
+            <tr>
+                <td><label for="lifetime">lifetime</label></td>
+                <td>
+                    <select id="lifetime" name="lifetime">
+                        <option value="1 month">1 month</option>
+                        <option value="2 month">2 month</option>
+                        <option value="3 month">3 month</option>
+                        <option value="4 month">4 month</option>
+                        <option value="5 month">5 month</option>
+                        <option value="6 month">6 month</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <button type="submit">submit</button>
+    </form>
+    <script>
+        document.getElementById('test-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+             });
+
+            const END_POINT = 'https://script.google.com/macros/s/AKfycbwUs-tTb61wYcmghtA0kngYzC1uRPfQ_qb00ALpvNQWNHRb6s7JA76s9PiNysmYfLOM/exec';
+            console.log(data);
+            fetch(END_POINT, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('ошибка');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Успех:', data);
+            })
+            .catch((error) => {
+                console.error('Ошибка:', error);
+            });
+        });
+    </script>
+</body>
+</html>
