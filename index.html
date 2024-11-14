@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Form</title>
 </head>
 
 <body>
-    <form action="/submit" method="post" id="test-form">
+    <form action="/submit" method="post" id="test-form" autocomplete="off">
         <table>
             <tr>
                 <td><label for="fullName">fullName</label></td>
@@ -86,10 +86,6 @@
                 </td>
             </tr>
             <tr>
-                <td><label for="businessTask">businessTask</label></td>
-                <td><input type="text" id="businessTask" name="businessTask" required></td>
-            </tr>
-            <tr>
                 <td><label for="lifetime">lifetime</label></td>
                 <td>
                     <select id="lifetime" name="lifetime" required>
@@ -102,41 +98,13 @@
                     </select>
                 </td>
             </tr>
+            <tr>
+                <td style="vertical-align: top;"><label for="businessTask">businessTask</label></td>
+                <td><textarea id="businessTask" name="businessTask" rows="5" cols="30" required></textarea></td>
+            </tr>
         </table>
         <button type="submit">submit</button>
     </form>
-    <script>
-        document.getElementById('test-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const formData = new FormData(this);
-            const data = {};
-            formData.forEach((value, key) => {
-                data[key] = value;
-             });
-
-            const END_POINT = 'https://script.google.com/macros/s/AKfycbwwspbfRvXiT9pfsqaO1LGAMdOI9uddIAqwnv5RTkkqPqTzyhr6nspt-WP0rvITysbM/exec';
-
-            fetch(END_POINT, {
-                redirect: 'follow',
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'text/plain;charset=utf-8'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('ошибка');
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log('Успех:', data);
-            })
-            .catch((error) => {
-                console.error('Ошибка:', error);
-            });
-        });
-    </script>
+    <script src="js/main.js" type="module"></script>
 </body>
 </html>
