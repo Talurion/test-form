@@ -1,0 +1,20 @@
+{
+  "name": "test-form",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "test form",
+  "main": "js/index.js",
+  "scripts": {
+    "lint": "eslint js/"
+  },
+  "devDependencies": {
+    "eslint": "8.48.0",
+    "eslint-config-htmlacademy": "9.1.1"
+  },
+  "engines": {
+    "node": "18",
+    "npm": "9"
+  },
+  "license": "ISC",
+  "author": ""
+}

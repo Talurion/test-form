@@ -105,6 +105,45 @@
         </table>
         <button type="submit">submit</button>
     </form>
-    <script src="js/main.js" type="module"></script>
+    <script>
+        const END_POINT = 'https://script.google.com/macros/s/AKfycbwwspbfRvXiT9pfsqaO1LGAMdOI9uddIAqwnv5RTkkqPqTzyhr6nspt-WP0rvITysbM/exec';
+
+        document.getElementById('test-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const newFormData = new FormData(this);
+        const formData = {};
+        newFormData.forEach((value, key) => {
+            formData[key] = value;
+        });
+
+        const newlifeTime = parseInt(formData.lifetime.split(' ')[0], 10);
+        delete formData.lifetime;
+        const dataConnector = {
+            ...formData,
+            'lifeTime': newlifeTime,
+        };
+
+        fetch(END_POINT, {
+            redirect: 'follow',
+            method: 'POST',
+            headers: {
+            'Content-Type': 'text/plain;charset=utf-8'
+            },
+            body: JSON.stringify(dataConnector)
+        })
+            .then((response) => {
+            if (!response.ok) {
+                throw new Error('ошибка');
+            }
+            return response.json();
+            })
+            .then(() => {
+            console.log('Успех:');
+            })
+            .catch((error) => {
+            console.error('Ошибка:', error);
+            });
+        });
+    </script>
 </body>
 </html>
