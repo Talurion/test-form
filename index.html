@@ -115,13 +115,19 @@
              });
 
             const END_POINT = 'https://script.google.com/macros/s/AKfycbwUs-tTb61wYcmghtA0kngYzC1uRPfQ_qb00ALpvNQWNHRb6s7JA76s9PiNysmYfLOM/exec';
-            console.log(data);
+            
+            const newData = {
+                'fullName': data.fullName,
+                'position': data.email
+            }
+            console.log(newData);
+
             fetch(END_POINT, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(data)
+                body: JSON.stringify(newData)
             })
             .then(response => {
                 if (!response.ok) {
