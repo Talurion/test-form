@@ -114,7 +114,7 @@
                 data[key] = value;
              });
 
-            const END_POINT = 'https://script.google.com/macros/s/AKfycbwoMvn3DijWiRAu2wsvC3pdQohqgvrgi-D0pMDhkWS59tUvf3bbSHP0E14yM4HAcl0vIg/exec';
+            const END_POINT = 'https://script.google.com/macros/s/AKfycbwwspbfRvXiT9pfsqaO1LGAMdOI9uddIAqwnv5RTkkqPqTzyhr6nspt-WP0rvITysbM/exec';
             
             const newData = {
                 'fullName': data.fullName,
@@ -123,9 +123,10 @@
             console.log(newData);
 
             fetch(END_POINT, {
+                redirect: 'follow',
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'text/plain;charset=utf-8'
                 },
                 body: JSON.stringify(newData)
             })
