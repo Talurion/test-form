@@ -1,0 +1,32 @@
+<script>
+    document.getElementById('test-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
+         });
+
+        const END_POINT = 'https://script.google.com/macros/s/AKfycbwUs-tTb61wYcmghtA0kngYzC1uRPfQ_qb00ALpvNQWNHRb6s7JA76s9PiNysmYfLOM/exec';
+        console.log(data);
+        fetch(END_POINT, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('ошибка');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Успех:', data);
+        })
+        .catch((error) => {
+            console.error('Ошибка:', error);
+        });
+    });
+</script>
