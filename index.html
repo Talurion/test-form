@@ -30,9 +30,10 @@
             <input type="text" id="position" placeholder="Должность" required autocomplete="off">
             <input type="text" id="division" placeholder="Отдел" required autocomplete="off">
             <input type="email" id="email" placeholder="email @t2.ru" required autocomplete="off">
-            <input type="text" id="agency" placeholder="Агентство (не обязательно)" autocomplete="off"> <!-- Без required -->
+            <input type="text" id="agency" placeholder="Агентство (не обязательно)" autocomplete="off">
+            <input type="text" id="bpmId" placeholder="Номер заявки bpm (для рекламных тегов)" autocomplete="off">
             
-            <input type="text" id="containerId" placeholder="Container ID" value="GTM-W9D3BC" autocomplete="off">
+            <input type="text" id="containerId" placeholder="Container ID" value="GTM-W9D3BC" autocomplete="off" required>
             <select id="siteType" required autocomplete="off">
                 <option value="" selected disabled>Выберите тип сайта</option>
                 <option value="t2.ru">main t2.ru</option> 
@@ -75,11 +76,12 @@
                 <option value="3">3 месяца</option>
                 <option value="6">6 месяцев</option>
             </select>
-            <textarea id="businessTask" rows="5" cols="30" placeholder="Бизнес смысл" required autocomplete="off"></textarea>
+            <textarea id="businessTask" rows="5" cols="30" placeholder="Бизнес смысл" required autocomplete="off" maxlength="180"></textarea>
             <button type="submit" class="button">Отправить</button>
         </form>
         
         <form id="updateForm" class="form" style="display:none;" autocomplete="off">
+            <input type="text" id="tagId" placeholder="ID тега" required autocomplete="off">
             <input type="text" id="tagName" placeholder="Имя тега" required autocomplete="off">
             <select id="lifetimeUpdate" required autocomplete="off">
                 <option value="" selected disabled>Выберите срок жизни тега</option>
@@ -92,12 +94,13 @@
         </form>
         
         <form id="deleteForm" class="form" style="display:none;" autocomplete="off">
+            <input type="text" id="tagId" placeholder="ID тега" required autocomplete="off">
             <input type="text" id="tagNameDelete" placeholder="Имя тега" required autocomplete="off">
             <button type="submit" class="button">Отправить</button>
         </form>
         
         <form id="deployForm" class="form" style="display:none;" autocomplete="off">
-            <input type="text" id="containerId" placeholder="Container ID" value="GTM-W9D3BC" autocomplete="off">
+            <input type="text" id="containerId" placeholder="Container ID" value="GTM-W9D3BC" autocomplete="off" required>
             <input type="text" id="workspace" placeholder="Рабочая область" required autocomplete="off">
             <input type="text" id="versionName" placeholder="Название версии" required autocomplete="off">
             <textarea id="description" rows="5" cols="30" placeholder="Описание" required autocomplete="off"></textarea>
