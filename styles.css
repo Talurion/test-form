@@ -1,0 +1,161 @@
+body { 
+    background-color: #000; /* Черный фон для страницы */
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 600px;
+    margin: 40px auto; /* Увеличен верхний отступ для больше пространства */
+    background-color: #fff; /* Белый фон для формы */
+    padding: 40px; /* Увеличены внутренние отступы для большего пространства внутри контейнера */
+    border-radius: 32px; /* Скругленные углы */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Легкая тень для контейнера */
+}
+
+h1 {
+    margin-bottom: 35px; /* Увеличен отступ снизу для заголовка */
+    text-align: left;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form > * { 
+    margin-bottom: 20px; /* Увеличен отступ между элементами формы */
+}
+
+label {
+    font-weight: bold;
+    text-align: left;
+}
+
+input, textarea, button, select {
+    width: 100%;
+    padding: 14px; /* Увеличен внутренний отступ */
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif; /* Указываем шрифт для этих элементов */
+    border: 1px solid #ccc;
+    border-radius: 12px; /* Закругленные края */
+    box-sizing: border-box; /* Учитываем padding в общей ширине элемента */
+    height: 48px; /* Устанавливаем одинаковую высоту для всех элементов */
+}
+
+/* Стиль для подсказок в текстовых полях */
+input::placeholder,
+textarea::placeholder {
+    color: #aaa; /* Серый цвет для подсказок */
+}
+
+/* Стиль для textarea (для поля businessTask) */
+textarea {
+    resize: vertical; /* Разрешаем вертикальный ресайз */
+    min-height: 120px; /* Увеличена минимальная высота */
+    font-size: 16px; /* Размер шрифта */
+    padding: 14px; /* Добавлены дополнительные внутренние отступы */
+    border: 1px solid #ccc; /* Обводка */
+    border-radius: 12px; /* Закругленные края */
+}
+
+#action {
+    margin-top: 35px; /* Увеличен отступ сверху */
+    margin-bottom: 20px; /* Увеличен отступ снизу */
+    width: 100%;
+    padding: 14px; /* Внутренний отступ */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 12px; /* Закругленные края */
+    box-sizing: border-box; /* Учитываем padding в общей ширине элемента */
+}
+
+select {
+    padding: 14px 40px 14px 14px; /* Увеличены отступы: сверху, справа, снизу, слева */
+    font-size: 16px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    width: 100%;
+    appearance: none; /* Убираем стандартную стрелочку в некоторых браузерах */
+    background-color: white; /* Цвет фона селекта */
+    position: relative; /* Нужно для позиционирования кастомной стрелочки */
+}
+
+/* Стиль для выпадающего списка (select) */
+select {
+    padding: 14px 40px 14px 14px; /* Отступы: сверху, справа, снизу, слева */
+    font-size: 16px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    width: 100%;
+    background-color: white; /* Цвет фона */
+    position: relative; /* Для позиционирования стрелочки */
+    -webkit-appearance: none; /* Для Safari */
+    -moz-appearance: none; /* Для Firefox */
+    appearance: none; /* Для других браузеров */
+}
+
+/* Фоновое изображение для стрелочки */
+select::-ms-expand {
+    display: none; /* Для старых версий браузеров */
+}
+
+select {
+    background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6"%3E%3Cpolygon points="0,0 10,0 5,6" fill="black" /%3E%3C/svg%3E') no-repeat right 10px center;
+    background-size: 10px 6px; /* Размер стрелочки */
+}
+
+/* Цвет для подсказки в select (disabled option) */
+select option:disabled {
+    color: #aaa; /* Серый цвет для подсказки */
+    font-style: italic; /* Дополнительно выделяем подсказку курсивом */
+}
+
+/* Цвет для выбранных опций */
+select option {
+    color: black; /* Черный цвет для всех выбранных опций */
+}
+
+/* Визуальный стиль для invalid select (если значение не выбрано) */
+select:invalid {
+    color: #aaa; /* Серый цвет, когда ничего не выбрано */
+}
+
+/* Визуальные улучшения при фокусе */
+select:focus {
+    outline: none; /* Убираем обводку при фокусе */
+    border-color: #000; /* Добавляем черную обводку */
+}
+
+textarea {
+    resize: none;
+}
+
+.button {
+    font-weight: bold;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 16px; /* Увеличен внутренний отступ */
+    font-size: 16px;
+    border-radius: 12px;
+    transition: background-color 0.3s, color 0.3s;
+    width: auto; /* Чтобы кнопка была по размеру текста */
+    margin: 0 auto; /* Автоматические отступы слева и справа для выравнивания по центру */
+    text-align: center; /* Выравнивание текста по центру */
+    line-height: 18px; /* Центрируем текст по вертикали (в зависимости от высоты кнопки) */
+}
+
+.button:hover {
+    background-color: #a7fc00;
+    color: #000;
+}
+
+/* Убираем нижний отступ у последнего элемента формы */
+form > *:last-child {
+    margin-bottom: 0;
+}
+

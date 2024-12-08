@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Форма заявки на внесение изменений в GTM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Форма заявки на внесение изменений в GTM</h1>
+
+        <!-- Выпадающий список -->
+        <label for="action">Что Вы хотите сделать?</label>
+        <select id="action" required>
+            <option value="" selected disabled>Выберите действие</option>
+            <option value="add">Добавить новый тег</option>
+            <option value="update">Обновить срок жизни тега</option>
+            <option value="delete">Удалить тег</option>
+            <option value="deploy">Заявка на выкладку изменений в GTM</option>
+        </select>
+
+        <!-- Формы -->
+        <form id="addForm" class="form" style="display:none;" autocomplete="off">
+            <input type="text" id="fullName" placeholder="ФИО" required autocomplete="off">
+            <input type="text" id="position" placeholder="Должность" required autocomplete="off">
+            <input type="text" id="division" placeholder="Отдел" required autocomplete="off">
+            <input type="email" id="email" placeholder="email @t2.ru" required autocomplete="off">
+            <input type="text" id="agency" placeholder="Агентство (не обязательно)" autocomplete="off"> <!-- Без required -->
+            
+            <input type="text" id="containerId" placeholder="Container ID" value="GTM-W9D3BC" autocomplete="off">
+            <select id="siteType" required autocomplete="off">
+                <option value="" selected disabled>Выберите тип сайта</option>
+                <option value="t2.ru">main t2.ru</option> 
+                <option value="landing">landing</option>
+                <option value="virtual showcase">virtual showcase</option>
+            </select>
+            <input type="text" id="siteUrl" placeholder="Адрес сайта" required value="https://msk.t2.ru/" autocomplete="off">
+            <select id="stream" required autocomplete="off">
+                <option value="" selected disabled>Выберите стрим</option>
+                <option value="web">web</option>
+                <option value="shop">shop</option>
+                <option value="shpd">shpd</option>
+                <option value="flight">flight</option>
+                <option value="b2b">b2b</option>
+                <option value="mixx">mixx</option>
+                <option value="skylink">skylink</option>
+                <option value="content">content</option>
+                <option value="info">info</option>
+                <option value="loyalty">loyalty</option>
+                <option value="personalization">personalization</option>
+            </select>
+            <input type="text" id="product" placeholder="Продукт (не обязательно)" autocomplete="off">
+            <select id="tagCategory" required autocomplete="off">
+                <option value="" selected disabled>Категория тега</option>
+                <option value="advertising">advertising</option>
+                <option value="analytics">analytics</option>
+                <option value="markupFix">markupFix</option>
+                <option value="connector">connector</option>
+            </select>
+            <select id="tagType" required autocomplete="off">
+                <option value="" selected disabled>Тип тега</option>
+                <option value="pageView">pageView</option>
+                <option value="event">event</option>
+                <option value="conversion">conversionEvent</option>
+            </select>
+            <select id="lifetime" required autocomplete="off">
+                <option value="" selected disabled>Выберите срок жизни тега</option>
+                <option value="1">1 месяц</option>
+                <option value="2">2 месяца</option>
+                <option value="3">3 месяца</option>
+                <option value="6">6 месяцев</option>
+            </select>
+            <textarea id="businessTask" rows="5" cols="30" placeholder="Бизнес смысл" required autocomplete="off"></textarea>
+            <button type="submit" class="button">Отправить</button>
+        </form>
+        
+        <form id="updateForm" class="form" style="display:none;" autocomplete="off">
+            <input type="text" id="tagName" placeholder="Имя тега" required autocomplete="off">
+            <select id="lifetimeUpdate" required autocomplete="off">
+                <option value="" selected disabled>Выберите срок жизни тега</option>
+                <option value="1">1 месяц</option>
+                <option value="2">2 месяца</option>
+                <option value="3">3 месяца</option>
+                <option value="6">6 месяцев</option>
+            </select>
+            <button type="submit" class="button">Отправить</button>
+        </form>
+        
+        <form id="deleteForm" class="form" style="display:none;" autocomplete="off">
+            <input type="text" id="tagNameDelete" placeholder="Имя тега" required autocomplete="off">
+            <button type="submit" class="button">Отправить</button>
+        </form>
+        
+        <form id="deployForm" class="form" style="display:none;" autocomplete="off">
+            <input type="text" id="containerId" placeholder="Container ID" value="GTM-W9D3BC" autocomplete="off">
+            <input type="text" id="workspace" placeholder="Рабочая область" required autocomplete="off">
+            <input type="text" id="versionName" placeholder="Название версии" required autocomplete="off">
+            <textarea id="description" rows="5" cols="30" placeholder="Описание" required autocomplete="off"></textarea>
+            <button type="submit" class="button">Отправить</button>
+        </form>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
