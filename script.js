@@ -3,12 +3,13 @@ const FormManager = (() => {
   const forms = {
     add: document.getElementById('addForm'),
     update: document.getElementById('updateForm'),
-    delete: document.getElementById('deleteForm'),
     deploy: document.getElementById('deployForm')
   };
 
   function showForm(action) {
-    Object.values(forms).forEach((form) => form.style.display = 'none');
+    Object.values(forms).forEach((form) => {
+      form.style.display = 'none';
+    });
 
     if (forms[action]) {
       forms[action].style.display = 'block';
