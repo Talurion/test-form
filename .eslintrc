@@ -8,9 +8,6 @@ env:
   es2022: true
   browser: true
 
-globals:
-  noUiSlider: readonly
-  Pristine: readonly
-
 extends:
   "htmlacademy/vanilla"
+  

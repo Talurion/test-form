@@ -4,13 +4,11 @@
   "version": "30.0.0",
   "description": "test form",
   "scripts": {
-    "start": "vite --port 3000 --open",
     "lint": "eslint js/"
   },
   "devDependencies": {
     "eslint": "8.48.0",
-    "eslint-config-htmlacademy": "9.1.1",
-    "vite": "4.4.9"
+    "eslint-config-htmlacademy": "9.1.1"
   },
   "engines": {
     "node": "18",

@@ -9,8 +9,8 @@ const onFormSubmit = (evt, successCallback, errorCallback) => {
   const data = Object.fromEntries(formData.entries());
 
   dataSend(data)
-    .then(successCallback)
-    .catch(errorCallback);
+    .then((response) => successCallback(response))
+    .catch((error) => errorCallback(error));
 };
 
 const initFormSubmit = (successCallback, errorCallback) => {

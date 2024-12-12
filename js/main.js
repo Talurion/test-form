@@ -1,14 +1,12 @@
-import { testFunction } from './test';
-testFunction ();
-// import { initFormSubmit } from './form-data-send.js';
+import { initFormSubmit } from './form-data-send.js';
 
-// const onSuccess = (response) => {
-//   console.log('Успешно отправлено:', response);
-// };
+const onSuccess = (response) => {
+  console.log('Успешно отправлено:', response);
+};
 
-// const onError = (error) => {
-//   console.log('Ошибка при отправке:', error);
-// };
+const onError = (error) => {
+  console.log('Ошибка при отправке:', error);
+};
 
 const FormManager = (() => {
   const actionSelect = document.getElementById('action');
@@ -29,7 +27,7 @@ const FormManager = (() => {
   }
 
   function init() {
-    // initFormSubmit(onSuccess, onError);
+    initFormSubmit(onSuccess, onError);
     actionSelect.addEventListener('change', (e) => {
       showForm(e.target.value);
     });
