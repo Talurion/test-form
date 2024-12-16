@@ -29,20 +29,11 @@
         <!-- Формы -->
         <form id="addForm" class="form" style="display:none;">
             <input type="text" id="fullName" placeholder="ФИО" required>
-            <input type="text" id="position" placeholder="Должность" required>
-            <input type="text" id="division" placeholder="Отдел" required>
+            <input type="text" id="division" placeholder="Отдел (как в адресной книге)" required>
             <input type="email" id="email" placeholder="email @t2.ru" required autocomplete="off">
             <input type="text" id="agency" placeholder="Агентство (не обязательно)" autocomplete="off">
-            <input type="text" id="bpmId" placeholder="Номер заявки bpm (для рекламных тегов)" autocomplete="off">
-            
-            <input type="text" id="containerId" placeholder="Container ID" value="GTM-W9D3BC" required>
-            <select id="siteType" required>
-                <option value="" selected disabled>Выберите тип сайта</option>
-                <option value="t2.ru">main t2.ru</option> 
-                <option value="landing">landing</option>
-                <option value="virtual showcase">virtual showcase</option>
-            </select>
-            <input type="text" id="siteUrl" placeholder="Адрес сайта" required value="https://msk.t2.ru/">
+            <input type="text" id="bpmId" placeholder="Номер заявки bpm (только для рекламных тегов)" autocomplete="off">
+            <input type="text" id="siteUrl" placeholder="Адрес сайта" autocomplete="off" required>
             <select id="stream" required>
                 <option value="" selected disabled>Выберите стрим</option>
                 <option value="site">site</option>
@@ -57,18 +48,12 @@
                 <option value="loyalty">loyalty</option>
                 <option value="personalization">personalization</option>
             </select>
-            <input type="text" id="product" placeholder="Продукт (не обязательно)" autocomplete="off">
             <select id="tagCategory" required>
                 <option value="" selected disabled>Категория тега</option>
                 <option value="ads">рекламный</option>
                 <option value="analytics">аналитический</option>
                 <option value="layout">изменение разметки</option>
                 <option value="connector">коннектор</option>
-            </select>
-            <select id="tagType" required>
-                <option value="" selected disabled>Тип тега</option>
-                <option value="pageView">pageView</option>
-                <option value="event">event</option>
             </select>
             <select id="lifetime" required>
                 <option value="" selected disabled>Выберите срок жизни тега</option>

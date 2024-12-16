@@ -13,12 +13,10 @@ const closePopup = () => {
 
 const copyIdentifier = () => {
   const newIdentifier = identifierBlock.querySelector('.identifierText').textContent;
-  console.log(identifierBlock);
-  console.log('Копируемый текст:', newIdentifier);
+
   navigator.clipboard.writeText(newIdentifier).then(() => {
-    console.log('Идентификатор скопирован в буфер обмена!');
-  }).catch((err) => {
-    console.error('Не удалось скопировать идентификатор:', err);
+  }).catch(() => {
+    throw new Error('Не удалось скопировать идентификатор');
   });
 };
 
