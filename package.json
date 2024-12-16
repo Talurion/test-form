@@ -17,5 +17,8 @@
     "npm": "9"
   },
   "license": "ISC",
-  "author": ""
+  "author": "",
+  "dependencies": {
+    "nanoid": "^5.0.9"
+  }
 }

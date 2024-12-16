@@ -9,14 +9,23 @@ const copyButton = popup.querySelector('.copyButton');
 
 const closePopup = () => {
   popupOverlay.style.display = 'none';
+  copyButton.textContent = 'Копировать';
+  copyButton.style.backgroundColor = '';
+  copyButton.style.cursor = 'pointer';
+  copyButton.disabled = false;
 };
 
 const copyIdentifier = () => {
   const newIdentifier = identifierBlock.querySelector('.identifierText').textContent;
 
   navigator.clipboard.writeText(newIdentifier).then(() => {
+    copyButton.textContent = 'Скопировано';
+    copyButton.style.backgroundColor = '#ccc';
+    copyButton.style.cursor = 'not-allowed';
+    copyButton.disabled = true;
+    popupDetailedMessage.textContent = 'Идентификатор успешно скопирован';
   }).catch(() => {
-    throw new Error('Не удалось скопировать идентификатор');
+    popupDetailedMessage.textContent = 'Ошибка, скопируйте идентификатор вручную';
   });
 };
 

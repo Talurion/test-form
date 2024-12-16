@@ -28,13 +28,13 @@
 
         <!-- Формы -->
         <form id="addForm" class="form" style="display:none;">
-            <input type="text" id="fullName" placeholder="ФИО" required>
-            <input type="text" id="division" placeholder="Отдел (как в адресной книге)" required>
-            <input type="email" id="email" placeholder="email @t2.ru" required autocomplete="off">
-            <input type="text" id="agency" placeholder="Агентство (не обязательно)" autocomplete="off">
-            <input type="text" id="bpmId" placeholder="Номер заявки bpm (только для рекламных тегов)" autocomplete="off">
-            <input type="text" id="siteUrl" placeholder="Адрес сайта" autocomplete="off" required>
-            <select id="stream" required>
+            <input type="text" name="fullName" placeholder="ФИО" required>
+            <input type="text" name="division" placeholder="Отдел (как в адресной книге)" required>
+            <input type="email" name="email" placeholder="email @t2.ru" required autocomplete="off">
+            <input type="text" name="agency" placeholder="Агентство (не обязательно)" autocomplete="off">
+            <input type="text" name="bpmId" placeholder="Номер заявки bpm (только для рекламных тегов)" autocomplete="off">
+            <input type="text" name="siteUrl" placeholder="Адрес сайта" autocomplete="off" required>
+            <select name="stream" required>
                 <option value="" selected disabled>Выберите стрим</option>
                 <option value="site">site</option>
                 <option value="shop">shop</option>
@@ -48,27 +48,27 @@
                 <option value="loyalty">loyalty</option>
                 <option value="personalization">personalization</option>
             </select>
-            <select id="tagCategory" required>
+            <select name="tagCategory" required>
                 <option value="" selected disabled>Категория тега</option>
                 <option value="ads">рекламный</option>
                 <option value="analytics">аналитический</option>
                 <option value="layout">изменение разметки</option>
                 <option value="connector">коннектор</option>
             </select>
-            <select id="lifetime" required>
+            <select name="lifetime" required>
                 <option value="" selected disabled>Выберите срок жизни тега</option>
                 <option value="1">1 месяц</option>
                 <option value="2">2 месяца</option>
                 <option value="3">3 месяца</option>
                 <option value="6">6 месяцев</option>
             </select>
-            <textarea id="businessTask" rows="5" cols="30" placeholder="Бизнес смысл" required autocomplete="off" maxlength="180"></textarea>
+            <textarea name="businessTask" rows="5" cols="30" placeholder="Бизнес смысл" required autocomplete="off" maxlength="180"></textarea>
             <button type="submit" class="button">Отправить</button>
         </form>
         
         <form id="updateForm" class="form" style="display:none;">
-            <input type="text" id="tagId" placeholder="ID тега" required autocomplete="off">
-            <select id="lifetimeUpdate" required>
+            <input type="text" name="tagId" placeholder="ID тега" required autocomplete="off">
+            <select name="lifetimeUpdate" required>
                 <option value="" selected disabled>Выберите срок жизни тега</option>
                 <option value="1">1 месяц</option>
                 <option value="2">2 месяца</option>
@@ -79,10 +79,10 @@
         </form>
         
         <form id="deployForm" class="form" style="display:none;">
-            <input type="text" id="containerId" placeholder="Container ID" value="GTM-W9D3BC" required>
-            <input type="text" id="workspace" placeholder="Рабочая область" required autocomplete="off">
-            <input type="text" id="versionName" placeholder="Название версии" required autocomplete="off">
-            <textarea id="description" rows="5" cols="30" placeholder="Описание" required autocomplete="off"></textarea>
+            <input type="text" name="containerId" placeholder="Container ID" value="GTM-W9D3BC" required>
+            <input type="text" name="workspace" placeholder="Рабочая область" required autocomplete="off">
+            <input type="text" name="versionName" placeholder="Название версии" required autocomplete="off">
+            <textarea name="description" rows="5" cols="30" placeholder="Описание" required autocomplete="off"></textarea>
             <button type="submit" class="button">Отправить</button>
         </form>
         

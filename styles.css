@@ -235,3 +235,24 @@ form > *:last-child {
     background-color: #a7fc00;
     color: #000;
 }
+
+.popup .copyButton {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.popup .copyButton:hover {
+    background-color: #a7fc00;
+    color: #000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.popup .copyButton:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
