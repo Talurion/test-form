@@ -10,6 +10,7 @@
     <meta name="robots" content="noindex, nofollow">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.png" type="image/png">
 </head>
 <body>
     <div class="container">
@@ -100,6 +101,19 @@
             <button type="submit" class="button">Отправить</button>
         </form>
         
+    </div>
+
+    <!-- popup -->
+    <div class="popup-overlay" id="popup">
+        <div class="popup">
+            <h2 class="popupMessage">Сообщение</h2>
+            <p class="popupDetailedMessage">Ваш запрос был успешно отправлен!</p>
+            <div class="identifier-block" id="identifierBlock" style="display: none;">
+                <span class="identifierText">Идентификатор</span>
+                <button class="copyButton">Копировать</button>
+            </div>
+            <button class="close-btn">Закрыть</button>
+        </div>
     </div>
 
     <script type="module" src="js/main.js"></script>
