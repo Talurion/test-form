@@ -1,4 +1,4 @@
-const popupOverlay = document.querySelector('.popup-overlay');
+const popupOverlay = document.querySelector('.popup-feedback');
 const popup = popupOverlay.querySelector('.popup');
 const popupButtonClose = popup.querySelector('.close-btn');
 const popupMessage = popup.querySelector('.popupMessage');

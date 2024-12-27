@@ -1,5 +1,10 @@
+import { nanoid } from 'nanoid';
 import { initFormSubmit } from './form-data-send.js';
+import { createCookie } from './utils.js';
 
+const adminElements = document.querySelectorAll('.admin-only');
+
+createCookie('requestId', nanoid(30), 1);
 
 const FormManager = (() => {
   const actionSelect = document.getElementById('action');
@@ -33,4 +38,15 @@ const FormManager = (() => {
 
 document.addEventListener('DOMContentLoaded', () => {
   FormManager.init();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  // localStorage.setItem('isAdmin', 'true');
+  const isAdmin = localStorage.getItem('isAdmin') === 'true';
+
+  if (isAdmin) {
+    adminElements.forEach((element) => {
+      element.classList.remove('hidden');
+    });
+  }
 });

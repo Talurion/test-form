@@ -22,12 +22,12 @@
             <option value="" selected disabled>Выберите действие</option>
             <option value="add">Добавить новый тег</option>
             <option value="update">Обновить срок жизни тега</option>
-            <!-- <option value="delete">Удалить тег</option> -->
             <option value="deploy">Заявка на выкладку изменений в GTM</option>
         </select>
 
         <!-- Формы -->
         <form id="addForm" class="form" style="display:none;">
+            <a href="https://docs.google.com/document/d/16A6AFFIlrHa3xtZlLv3d2yvIRM7Dw3HRQKVC4puSFbc/edit?usp=sharing" class="label-form-help" target="_blank">Справка</a>
             <input type="text" name="fullName" placeholder="ФИО" required>
             <input type="text" name="division" placeholder="Отдел (как в адресной книге)" required>
             <input type="email" name="email" placeholder="email @t2.ru" required autocomplete="off">
@@ -52,8 +52,8 @@
                 <option value="" selected disabled>Категория тега</option>
                 <option value="ads">рекламный</option>
                 <option value="analytics">аналитический</option>
-                <option value="layout">изменение разметки</option>
-                <option value="connector">коннектор</option>
+                <option value="layout" class="hidden admin-only">изменение разметки</option>
+                <option value="connector" class="hidden admin-only">коннектор</option>
             </select>
             <select name="lifetime" required>
                 <option value="" selected disabled>Выберите срок жизни тега</option>
@@ -67,9 +67,10 @@
         </form>
         
         <form id="updateForm" class="form" style="display:none;">
-            <input type="text" name="tagId" placeholder="ID тега" required autocomplete="off">
+            <label  class="label-form-help" target="_blank">Укажите здесь ID, который пришел Вам в письме</label>
+            <input type="text" name="tagId" placeholder="ID тега" required autocomplete="off" maxlength="10" minlength="10" pattern=".{10}" title="некорректный ID">
             <select name="lifetimeUpdate" required>
-                <option value="" selected disabled>Выберите срок жизни тега</option>
+                <option value="" selected disabled>Продлить срок жизни тега на:</option>
                 <option value="1">1 месяц</option>
                 <option value="2">2 месяца</option>
                 <option value="3">3 месяца</option>
@@ -79,6 +80,7 @@
         </form>
         
         <form id="deployForm" class="form" style="display:none;">
+            <a href="https://docs.google.com/document/d/16A6AFFIlrHa3xtZlLv3d2yvIRM7Dw3HRQKVC4puSFbc/edit?usp=sharing" class="label-form-help" target="_blank">Перед отправкой прочитайте правила работы в GTM</a>
             <input type="text" name="containerId" placeholder="Container ID" value="GTM-W9D3BC" required>
             <input type="text" name="workspace" placeholder="Рабочая область" required autocomplete="off">
             <input type="text" name="versionName" placeholder="Название версии" required autocomplete="off">
@@ -88,8 +90,8 @@
         
     </div>
 
-    <!-- popup -->
-    <div class="popup-overlay" id="popup">
+    <!-- Popup -->
+    <div class="popup-overlay popup-feedback" id="feedback">
         <div class="popup">
             <h2 class="popupMessage">Сообщение</h2>
             <p class="popupDetailedMessage">Ваш запрос был успешно отправлен!</p>

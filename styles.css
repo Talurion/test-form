@@ -256,3 +256,12 @@ form > *:last-child {
     color: #666;
     cursor: not-allowed;
 }
+
+.label-form-help {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}

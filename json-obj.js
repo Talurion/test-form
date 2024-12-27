@@ -1,28 +1,23 @@
 const addFormObj = {
-  'formId': 'string', // addForm
-  'date': 'string', // генерирую на фронте
-  'tagId': 'string', // идентификатор тега сгенерирую на фронте (nanoid)
-  'fullName': 'string',
-  'position': 'string',
-  'division': 'string',
-  'email': 'string',
-  'agency': 'string',
-  'bpmId': 'string',
-  'containerId': 'string',
-  'siteType': 'string',
-  'siteUrl': 'string',
-  'stream': 'string',
-  'product': 'string',
-  'tagCategory': 'string',
-  'tagType': 'string',
-  'lifetime': 'number',
-  'businessTask': 'string',
-  'dateEnd': 'string' // date + lifetime
+  'formId': 'addForm',
+  'tagId': 'IiSu3h1UtD',
+  'date': '2024-12-27T07:57:10.422Z',
+  'fullName': 'Юшков Антон Сергеевич',
+  'division': 'digital',
+  'email': 'anton.yushkov@t2.ru',
+  'agency': 'MGcom',
+  'bpmId': 'id12345',
+  'siteUrl': 't2.ru',
+  'stream': 'mixx',
+  'tagCategory': 'ads',
+  'lifetime': 6,
+  'businessTask': 'test',
+  'dateEnd': '2025-06-25T07:57:10.422Z'
 };
 
-const gtmTagList = {
-  'name': 'string', // название тега
-  'notes': 'string', // примечание тега - нужна только первая часть, до знака |
-  'parentFolderId': 'string', // папка тега
-  'paused': 'boolean', // включен или выключен
+const updateFormObj = {
+  'formId': 'updateForm',
+  'tagId': 'IiSu3h1UtD',
+  'date': '2024-12-27T07:59:03.047Z',
+  'lifetimeUpdate': 6
 };
